@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BYD Service - Запись на сервис</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./src/fonts/fonts.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__left">
+        <div class="header__logo">
+          <a href="#">
+            <img src="/src/images/byd-logo.svg" alt="BYD" class="header__logo-img">
+          </a>
+        </div>
+        <nav class="header__nav">
+          <a href="#" class="header__nav-link" data-key="headerNav.model">Модельный ряд</a>
+          <a href="#" class="header__nav-link header__nav-link--active" data-key="headerNav.about">О компании</a>
+          <a href="#" class="header__nav-link" data-key="headerNav.used">БУ автомобили</a>
+          <a href="#" class="header__nav-link" data-key="headerNav.special">Спецпредложения</a>
+          <a href="#" class="header__nav-link" data-key="headerNav.test">Тест-драйв</a>
+          <a href="#" class="header__nav-link" data-key="headerNav.bookTest">Запись на тест драйв</a>
+        </nav>
+        <div class="custom-select">
+          <div class="selected">
+            <span>Uz</span>
+            <img src="./src/images/lang-dropdown.svg" alt="dropdown icon" class="dropdown-icon" />
+          </div>
+          <div class="options">
+            <div data-value="ru">Ру</div>
+            <div data-value="uz">Uz</div>
+            <div data-value="en">En</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__contacts">
+        <a href="tel:+998909999999" class="header__phone">
+          <img class="header__phone-icon" src="./src/images/phone-logo.svg" alt="phone">
+          <span class="header__phone-text">+998 90 999 99 99</span>
+        </a>
+        <div class="header__dealership">
+          <a href="#">
+            <img src="./src/images/beni-motors-logo.svg" alt="Beni Motors" class="mobile-menu__dealership-logo">
+          </a>
+        </div>
+      </div>
+
+      <!-- Hamburger Menu Button -->
+      <button class="hamburger" id="hamburger">
+        <img class="hamburger__img" src="./src/images/hamburger-menu.svg" alt="hamburger menu icon">
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose">
+      <img class="hamburger__img" src="./src/images/close-icon.svg" alt="hamburger menu icon">
+    </button>
+
+    <nav class="mobile-menu__nav">
+      <a href="#" class="mobile-menu__nav-link" data-key="headerNav.model">Модельный ряд</a>
+      <a href="#" class="mobile-menu__nav-link header__nav-link--active" data-key="headerNav.about">О компании</a>
+      <a href="#" class="mobile-menu__nav-link" data-key="headerNav.used">БУ автомобили</a>
+      <a href="#" class="mobile-menu__nav-link" data-key="headerNav.special">Спецпредложения</a>
+      <a href="#" class="mobile-menu__nav-link" data-key="headerNav.test">Тест-драйв</a>
+      <a href="#" class="mobile-menu__nav-link" data-key="headerNav.bookTest">Запись на тест драйв</a>
+    </nav>
+    <div class="mobile-menu__contacts">
+      <span class="mobile-menu__phone">+998 90 999 99 99</span>
+      <div class="mobile-menu__dealership">
+        <a href="#">
+          <img src="./src/images/beni-motors-logo.svg" alt="Beni Motors" class="mobile-menu__dealership-logo">
+        </a>
+      </div>
+
+      <div class="custom-select">
+          <div class="selected">
+            <span>Uz</span>
+            <img src="./src/images/lang-dropdown.svg" alt="dropdown icon" class="dropdown-icon" />
+          </div>
+          <div class="options">
+            <div data-value="ru">Ру</div>
+            <div data-value="uz">Uz</div>
+            <div data-value="en">En</div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="breadcrumb__container">
+      <a href="#" class="breadcrumb__link" data-key="breadcrumb.home">Главная страница</a>
+      <span class="breadcrumb__separator">&gt;</span>
+      <span class="breadcrumb__current" data-key="breadcrumb.service">Сервис</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="main__container">
+      <!-- Service Header -->
+      <section class="service-header">
+        <h1 class="service-header__title">BYD Service</h1>
+        <nav class="service-nav">
+          <a href="#" class="service-nav__link" data-key="serviceNav.services">Услуги 4С</a>
+          <a href="#" class="service-nav__link" data-key="serviceNav.warranty">Гарантия</a>
+          <a href="#" class="service-nav__link" data-key="serviceNav.maintenance">Обслуживание</a>
+          <a href="#" class="service-nav__link service-nav__link--active" data-key="serviceNav.booking">Запись на
+            сервис</a>
+        </nav>
+      </section>
+
+      <!-- Service Line -->
+      <div class="service-nav__line">
+        <div class="service-nav__line" />
+      </div>
+
+      <!-- Service Form -->
+      <section class="service-form">
+        <h2 class="service-form__title" data-key="form.title">Запись на сервис</h2>
+        <p class="service-form__description" data-key="form.description">
+          Вы можете оставить свою заявку на сервисное обслуживание. Оставьте ваши контакты и укажите тему запроса, а мы
+          свяжемся с вами
+        </p>
+
+        <form class="form" id="serviceForm">
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" data-key="form.fullname">ФИО*</label>
+              <input type="text" class="form__input" name="fullName" required>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" data-key="form.phone">Номер телефона*</label>
+              <input type="tel" readonly id="phone" value="+998" name="phone" class="form__input form__input--phone" required />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" data-key="form.city">Город*</label>
+              <div class="form__select-wrapper">
+                <select class="form__select" name="city" required>
+                  <option value="" data-key="cities.default">Выберите город</option>
+                  <option value="tashkent" data-key="cities.tashkent">Ташкент</option>
+                  <option value="samarkand" data-key="cities.samarkand">Самарканд</option>
+                  <option value="bukhara" data-key="cities.bukhara">Бухара</option>
+                  <option value="nukus" data-key="cities.nukus">Нукус</option>
+                  <option value="andijan" data-key="cities.andijan">Андижан</option>
+                  <option value="fergana" data-key="cities.fergana">Фергана</option>
+                  <option value="namangan" data-key="cities.namangan">Наманган</option>
+                  <option value="karshi" data-key="cities.karshi">Карши</option>
+                  <option value="termez" data-key="cities.termez">Термез</option>
+                  <option value="urgench" data-key="cities.urgench">Ургенч</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" data-key="form.branch">Филиал*</label>
+              <div class="form__select-wrapper">
+                <select class="form__select" name="branch" required>
+                  <option value="" data-key="branches.default">Выберите филиал</option>
+                  <option value="yunusabad" data-key="branches.yunusabad">BYD Юнусабад</option>
+                  <option value="sergeli" data-key="branches.sergeli">BYD Сергели</option>
+                  <option value="chilanzar" data-key="branches.chilanzar">BYD Чиланзар</option>
+                  <option value="mirzo-ulugbek" data-key="branches.mirzoUlugbek">BYD Мирзо Улугбек</option>
+                  <option value="yakkasaray" data-key="branches.yakkasaray">BYD Яккасарай</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" data-key="form.car">Автомобиль*</label>
+              <div class="form__select-wrapper">
+                <select class="form__select" name="car" required>
+                  <option value="" data-key="cars.default">Выберите автомобиль</option>
+                  <option value="han" data-key="cars.han">BYD Han</option>
+                  <option value="tang" data-key="cars.tang">BYD Tang</option>
+                  <option value="song" data-key="cars.song">BYD Song</option>
+                  <option value="dolphin" data-key="cars.dolphin">BYD Dolphin</option>
+                  <option value="seal" data-key="cars.seal">BYD Seal</option>
+                  <option value="atto3" data-key="cars.atto3">BYD Atto 3</option>
+                  <option value="yuan" data-key="cars.yuan">BYD Yuan</option>
+                  <option value="qin" data-key="cars.qin">BYD Qin</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" data-key="form.date">Дата*</label>
+              <input type="text" id="date" class="form__input datepicker-input" name="date"
+                data-key-placeholder="form.datePlaceholder" placeholder="ДД/ММ/ГГГГ" readonly required>
+              <div class="datepicker" id="datepicker">
+                <div class="datepicker__header">
+                  <button type="button" class="datepicker__btn datepicker__btn--prev" id="prevMonth">&lt;</button>
+                  <span class="datepicker__title" id="monthYear"></span>
+                  <button type="button" class="datepicker__btn datepicker__btn--next" id="nextMonth">&gt;</button>
+                </div>
+                <div class="datepicker__weekdays">
+                  <span class="datepicker__weekday" data-key="weekdays.mon">Пн</span>
+                  <span class="datepicker__weekday" data-key="weekdays.tue">Вт</span>
+                  <span class="datepicker__weekday" data-key="weekdays.wed">Ср</span>
+                  <span class="datepicker__weekday" data-key="weekdays.thu">Чт</span>
+                  <span class="datepicker__weekday" data-key="weekdays.fri">Пт</span>
+                  <span class="datepicker__weekday" data-key="weekdays.sat">Сб</span>
+                  <span class="datepicker__weekday" data-key="weekdays.sun">Вс</span>
+                </div>
+                <div class="datepicker__days" id="daysContainer"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" data-key="form.time">Время*</label>
+              <div class="time-selector">
+                <button type="button" class="time-selector__btn time-selector__btn--active"
+                  data-time="09:00">09:00</button>
+                <button type="button" class="time-selector__btn" data-time="11:00">11:00</button>
+                <button type="button" class="time-selector__btn" data-time="13:00">13:00</button>
+                <button type="button" class="time-selector__btn" data-time="15:00">15:00</button>
+                <button type="button" class="time-selector__btn" data-time="17:00">17:00</button>
+                <button type="button" class="time-selector__btn" data-time="19:00">19:00</button>
+              </div>
+              <input type="hidden" name="time" value="09:00">
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" data-key="form.comment">Ваш комментарий для заявки*</label>
+              <textarea class="form__textarea" name="comment" rows="4" data-key="form.name"
+                data-key-placeholder="form.commentPlaceholder"
+                placeholder="Опишите проблему или укажите желаемые услуги..." required></textarea>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__checkbox-group">
+              <input type="checkbox" class="form__checkbox" id="agreement" name="agreement" required>
+              <label for="agreement" class="form__checkbox-label" data-key="form.agreement">
+                Я согласен с условиями обработки персональных данных
+              </label>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <button type="submit" class="form__submit" data-key="form.submit">Записаться на сервис</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script src="./src/js/mobile-menu.js"></script>
+  <script src="./src/js/datepicker.js"></script>
+  <script src="./src/js/language-switch.js"></script>
+  <script src="./src/js/custom-dropdown.js"></script>
+  <script src="./src/js/main.js"></script>
+</body>
+
+</html>

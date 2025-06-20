@@ -1,0 +1,1158 @@
+@import url('./fonts/fonts.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Montserrat';
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.header__container,
+.breadcrumb__container,
+.main__container {
+    max-width: 1470px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background-color: #252728 !important;
+    color: white;
+    padding: 15px 0;
+    width: 100%;
+    position: relative;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-shrink: 0;
+}
+
+.header__logo-img {
+    width: 140px;
+    height: 28px;
+    width: auto;
+}
+
+.header__nav {
+    display: flex;
+    gap: 24px;
+    white-space: nowrap;
+}
+
+.header__nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+    padding: 8px 0;
+}
+
+.header__nav-link:hover {
+    color: #ffffff;
+}
+
+.header__nav-link--active {
+    font-weight: 500;
+    color: #ffffff;
+    position: relative;
+}
+
+.header__nav-link--active::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 60px;
+    height: 2px;
+    background-color: #ffffff;
+}
+
+    .header__nav-link:not(.header__nav-link--active)::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 1px;
+    transition: width 0.3s ease;
+}
+
+.header__nav-link:not(.header__nav-link--active):hover::before {
+    width: 100%;
+    min-width: 60px;
+}
+
+.header__contacts {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.header__phone {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.header__phone:hover {
+    color: #0066cc;
+}
+
+.header__phone-icon {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+    display: none;
+    transition: fill 0.3s ease;
+}
+
+.header__phone:hover .header__phone-icon {
+    fill: #0066cc;
+}
+
+.header__phone-text {
+    display: inline;
+}
+
+.header__dealership-logo {
+    max-width: 158px;
+    height: 28px;
+    flex-shrink: 0;
+    transition: opacity 0.3s ease;
+}
+
+.header__dealership-logo:hover {
+    opacity: 0.8;
+}
+
+.custom-select {
+    width: 60px;
+    position: relative;
+    font-family: Montserrat;
+    font-size: 14px;
+}
+
+.selected {
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.selected:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #0066cc;
+}
+
+.dropdown-icon {
+    width: 15px;
+    height: auto;
+    margin-left: 4px;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.selected:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #1a1a1a;
+    color: white;
+    display: none;
+    border: 1px solid #333;
+    border-radius: 4px;
+    z-index: 99;
+    overflow: hidden;
+}
+
+.options div {
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.options div:hover {
+    background-color: #0066cc;
+    color: white;
+}
+
+.hamburger {
+    display: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    background-color: transparent;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+    color: #0066cc;
+}
+
+.hamburger__img {
+    width: 28px;
+    height: 28px;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    z-index: 10000;
+    transition: right 0.3s ease;
+    padding: 80px 30px 30px;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu__close:hover {
+    color: #0066cc;
+}
+
+.mobile-menu__nav {
+    margin-bottom: 40px;
+}
+
+.mobile-menu__nav-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.mobile-menu__nav-link:hover {
+    color: #0066cc;
+    padding-left: 10px;
+    background-color: rgba(0, 102, 204, 0.1);
+}
+
+.mobile-menu__nav-link.header__nav-link--active {
+    color: #0066cc;
+    font-weight: 600;
+    background-color: rgba(0, 102, 204, 0.15);
+    border-left: 3px solid #0066cc;
+    padding-left: 12px;
+}
+
+.mobile-menu__contacts {
+    padding-top: 30px;
+}
+
+.mobile-menu__phone {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.mobile-menu__dealership {
+    text-align: center;
+}
+
+.mobile-menu__dealership-logo {
+    width: 120px;
+    height: auto;
+}
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.breadcrumb {
+    padding: 15px 0;
+    margin-top: 36px;
+}
+
+.breadcrumb__container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.breadcrumb__link {
+    color: #373637;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb__link:hover {
+    color: #0066cc;
+}
+
+.breadcrumb__separator {
+    color: #999;
+}
+
+.breadcrumb__current {
+    color: #333;
+}
+
+.main {
+    padding: 40px 0;
+}
+
+.service-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.service-header__title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.service-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.service-nav__line {
+    height: 1px;
+    background-color: #F2F3F5;
+}
+
+.service-nav__link {
+    color: #373637;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+}
+
+.service-nav__link:hover {
+    color: #0066cc;
+    background-color: rgba(0, 102, 204, 0.05);
+}
+
+.service-nav__link--active {
+    color: #D70C19;
+    font-weight: 600;
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.service-form {
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.service-form__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.service-form__description {
+    text-align: center;
+    color: #373637;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.form__row {
+    margin-bottom: 20px;
+}
+
+.form__group {
+    position: relative;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.form__input,
+.form__select,
+.form__textarea {
+    width: 100%;
+    font-family: 'Montserrat';
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: white;
+}
+
+.form__input:focus,
+.form__select:focus,
+.form__textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+.form__input--phone {
+    background-color: #f8f9fa;
+}
+
+.form__select-wrapper {
+    position: relative;
+}
+
+.form__select {
+    appearance: none;
+    background-image: url("./images/dropdown.svg");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    padding-right: 40px;
+}
+
+.form__textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.time-selector {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.time-selector__btn {
+    padding: 8px 16px;
+    font-family: 'Montserrat';
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.time-selector__btn:hover {
+    border-color: #0066cc;
+    color: #0066cc;
+    transform: translateY(-1px);
+}
+
+.time-selector__btn--active {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+.form__checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.form__checkbox {
+    margin-top: 2px;
+}
+
+.form__checkbox-label {
+    font-size: 14px;
+    color: #373637;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.form__submit {
+    width: 100%;
+    padding: 15px;
+    font-family: 'Montserrat';
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form__submit:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.form__submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.datepicker {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    z-index: 1000;
+    display: none;
+}
+
+.datepicker--active {
+    display: block;
+}
+
+.datepicker__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.datepicker__btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.datepicker__btn:hover {
+    background-color: #e9ecef;
+}
+
+.datepicker__title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.datepicker__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.datepicker__weekday {
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    color: #373637;
+    padding: 8px 0;
+}
+
+.datepicker__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    padding: 10px;
+}
+
+.datepicker__day {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.datepicker__day:hover {
+    background-color: #e9ecef;
+}
+
+.datepicker__day--selected {
+    background-color: #0066cc;
+    color: white;
+}
+
+.datepicker__day--disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.datepicker__day--disabled:hover {
+    background-color: transparent;
+}
+
+.datepicker__day--other-month {
+    color: #ccc;
+}
+
+.form__error {
+    color: #D70C19;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.form__input--error,
+.form__select--error,
+.form__textarea--error {
+    border-color: #D70C19;
+}
+
+.form__success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+}
+
+.form__submit--loading {
+    position: relative;
+    color: transparent;
+}
+
+.form__submit--loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@media (max-width: 1400px) {
+
+    .header__container,
+    .breadcrumb__container,
+    .main__container {
+        padding: 0 30px;
+    }
+
+    .header__logo-img {
+        width: 130px;
+        height: 26px;
+    }
+
+    .header__phone {
+        font-size: 15px;
+    }
+
+    .header__nav-link {
+        font-size: 13px;
+    }
+
+    .header__dealership-logo {
+        max-width: 145px;
+        height: 26px;
+    }
+}
+
+@media (max-width: 1322px) {
+    .header__left {
+        gap: 30px;
+    }
+
+    .header__nav {
+        gap: 20px;
+    }
+
+    .header__nav-link {
+        font-size: 13px;
+    }
+
+    .header__contacts {
+        gap: 15px;
+    }
+
+    .header__phone {
+        font-size: 14px;
+    }
+
+    .header__dealership-logo {
+        max-width: 135px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 1248px) {
+    .header__left {
+        gap: 28px;
+    }
+
+    .header__nav {
+        gap: 18px;
+    }
+
+    .header__nav-link {
+        font-size: 12.5px;
+    }
+
+    .header__contacts {
+        gap: 14px;
+    }
+
+    .header__phone {
+        font-size: 13.5px;
+    }
+
+    .header__dealership-logo {
+        max-width: 130px;
+        height: 23px;
+    }
+
+    .header__logo-img {
+        width: 125px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header__logo-img {
+        width: 120px;
+        height: 24px;
+    }
+
+    .header__left {
+        gap: 25px;
+    }
+
+    .header__nav {
+        gap: 18px;
+    }
+
+    .header__nav-link {
+        font-size: 12px;
+    }
+
+    .header__phone {
+        font-size: 13px;
+    }
+
+    .header__dealership-logo {
+        max-width: 125px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 1160px) {
+    .header__phone-text {
+        display: none;
+    }
+
+    .header__phone-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 15px;
+        display: block;
+    }
+}
+
+@media (max-width: 1100px) {
+    .header__logo-img {
+        width: 110px;
+        height: 22px;
+    }
+
+    .header__left {
+        gap: 20px;
+    }
+
+    .header__nav {
+        gap: 15px;
+    }
+
+    .header__nav-link {
+        font-size: 11px;
+    }
+
+    .header__contacts {
+        gap: 12px;
+    }
+
+    .header__phone {
+        font-size: 12px;
+    }
+
+    .header__dealership-logo {
+        max-width: 115px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header__logo-img {
+        width: 100px;
+        height: 20px;
+    }
+
+    .header__left {
+        gap: 15px;
+    }
+
+    .header__nav {
+        gap: 12px;
+    }
+
+    .header__dealership-logo {
+        max-width: 105px;
+        height: 18px;
+    }
+
+    .header__nav-link {
+        font-size: 10px;
+    }
+
+    .header__phone {
+        font-size: 11px;
+    }
+
+    .service-nav {
+        gap: 20px;
+    }
+
+    .service-nav__link {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 950px) {
+    .header__logo-img {
+        width: 95px;
+        height: 19px;
+    }
+
+    .header__left {
+        gap: 12px;
+    }
+
+    .header__nav {
+        gap: 10px;
+    }
+
+    .header__contacts {
+        gap: 10px;
+    }
+
+    .header__phone {
+        font-size: 10px;
+    }
+
+    .header__dealership-logo {
+        max-width: 95px;
+        height: 17px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header__logo-img {
+        width: 90px;
+        height: 18px;
+    }
+
+    .header__left {
+        gap: 10px;
+    }
+
+    .header__nav {
+        gap: 8px;
+    }
+
+    .header__phone {
+        font-size: 10px;
+    }
+
+    .header__dealership-logo {
+        max-width: 90px;
+        height: 16px;
+    }
+
+    .service-header__title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 850px) {
+    .header__logo-img {
+        width: 85px;
+        height: 17px;
+    }
+
+    .header__phone-icon {
+        width: 16px;
+        height: 16px;
+        margin-left: 25px;
+        display: block;
+    }
+
+    .header__left {
+        gap: 8px;
+    }
+
+
+    .header__nav {
+        gap: 6px;
+    }
+
+    .header__phone {
+        font-size: 9px;
+    }
+
+    .header__dealership-logo {
+        max-width: 85px;
+        height: 15px;
+    }
+}
+
+@media (max-width: 870px) {
+    .header__logo-img {
+        width: 85px;
+        height: 17px;
+    }
+
+    .header__phone-icon {
+        width: 16px;
+        height: 16px;
+        margin-left: 25px;
+        display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    .header__nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .header__nav-link--active {
+        display: none;
+    }
+
+    .custom-select {
+       display: none;
+    }
+
+    .header__phone-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+        display: block;
+    }
+
+    .header__logo-img {
+        width: 100px;
+        height: 20px;
+    }
+
+    .header__phone-text {
+        display: block;
+    }
+
+    .header__phone {
+        font-size: 12px;
+    }
+
+    .header__dealership-logo {
+        max-width: 100px;
+        height: 18px;
+    }
+
+    .service-nav {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__container {
+        padding: 0 20px;
+    }
+
+    .header__left {
+        gap: 15px;
+    }
+
+    .custom-select{
+        display: none;
+    }
+
+    .header__contacts {
+        display: none;
+    }
+
+    .breadcrumb {
+        margin-top: 36px;
+        padding-left: 20px;
+    }
+
+    .service-header__title {
+        font-size: 32px;
+    }
+
+    .service-nav {
+        gap: 20px;
+    }
+
+    .service-form {
+        padding: 20px;
+    }
+
+    .time-selector {
+        justify-content: center;
+    }
+
+    .datepicker {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-nav {
+        gap: 10px;
+    }
+
+    .service-nav__link {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-menu {
+        width: 280px;
+    }
+
+    .service-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .time-selector__btn {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .service-header__title {
+        font-size: 28px;
+    }
+
+    .service-form__title {
+        font-size: 26px;
+    }
+}
