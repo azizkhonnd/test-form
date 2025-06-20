@@ -17,6 +17,7 @@
   "form.phone": "Telefon raqami*",
   "form.city": "Shahar*",
   "form.branch": "Filial*",
+  "form.date.key": "KK/OO/YYYY",
   "form.car": "Avtomobil*",
   "form.date": "Sana*",
   "form.time": "Vaqt*",

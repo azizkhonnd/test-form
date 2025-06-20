@@ -20,6 +20,7 @@
         "form.car": "Car*",
         "form.date": "Date*",
         "form.time": "Time*",
+        "form.date.key": "DD/MM/YYYY",
         "form.comment": "Your comment for the request*",
         "form.submit": "Book Service",
         "form.agreement": "I agree to the terms of personal data processing",
